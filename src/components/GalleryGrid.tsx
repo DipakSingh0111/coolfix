@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { site, type GalleryData, type SectionProps } from '@/data';
 import { cn } from '@/lib/cn';
@@ -8,6 +9,11 @@ import { cn } from '@/lib/cn';
 export default function GalleryGrid({ data, className }: SectionProps<GalleryData['photos']> = {}) {
   const photos = data || site.gallery.photos;
   const [selected, setSelected] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const close = () => setSelected(null);
   const prev = () =>
@@ -56,9 +62,9 @@ export default function GalleryGrid({ data, className }: SectionProps<GalleryDat
         ))}
       </div>
 
-      {selected !== null && (
+      {mounted && selected !== null && createPortal(
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4"
           onClick={close}
           role="dialog"
           aria-modal="true"
@@ -119,7 +125,8 @@ export default function GalleryGrid({ data, className }: SectionProps<GalleryDat
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/80">
             {selected + 1} / {photos.length}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
