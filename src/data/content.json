@@ -248,7 +248,7 @@
                   },
                   "primaryBtn": {
                     "label": "Book a Service",
-                    "href": "#book"
+                    "href": "/book"
                   },
                   "secondaryBtn": {
                     "label": "Get Details",
@@ -269,7 +269,7 @@
                   },
                   "primaryBtn": {
                     "label": "Book a Service",
-                    "href": "#book"
+                    "href": "/book"
                   },
                   "secondaryBtn": {
                     "label": "Get Details",
@@ -290,7 +290,7 @@
                   },
                   "primaryBtn": {
                     "label": "Book a Service",
-                    "href": "#book"
+                    "href": "/book"
                   },
                   "secondaryBtn": {
                     "label": "Get Details",
@@ -682,7 +682,7 @@
               },
               "secondaryBtn": {
                 "label": "Book a Service",
-                "href": "#book",
+                "href": "/book",
                 "icon": "arrowRight"
               }
             }

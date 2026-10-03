@@ -29,10 +29,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <SiteHeader className="fixed top-0 left-0 w-full z-[100]" />
         <SmoothScroll>
-          <SiteHeader />
-          {children}
-          <Footer />
+          <div className="pt-[144px] md:pt-[208px]">
+            {children}
+            <Footer />
+          </div>
         </SmoothScroll>
       </body>
     </html>
