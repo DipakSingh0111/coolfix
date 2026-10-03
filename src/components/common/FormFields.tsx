@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import Icon from '../Icon';
+import Icon from '@/components/Icon';
 
 export const inputClass =
   'w-full rounded-md border border-gray-200 bg-white py-2.5 pl-9 pr-3 text-[13px] text-gray-800 shadow-sm outline-none transition placeholder:text-gray-400 focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]';

@@ -1,8 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { site, type GalleryData, type SectionProps } from '@/data';
+import { cn } from '@/lib/cn';
 
-export default function GalleryGrid({ photos }: { photos: string[] }) {
+export default function GalleryGrid({ data, className }: SectionProps<GalleryData['photos']> = {}) {
+  const photos = data || site.gallery.photos;
   const [selected, setSelected] = useState<number | null>(null);
 
   const close = () => setSelected(null);
@@ -30,7 +34,7 @@ export default function GalleryGrid({ photos }: { photos: string[] }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+      <div className={cn('grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12', className)}>
         {photos.map((photo, idx) => (
           <button
             type="button"
@@ -40,10 +44,12 @@ export default function GalleryGrid({ photos }: { photos: string[] }) {
             className="relative aspect-[4/3] rounded-lg overflow-hidden group shadow-sm border border-gray-100 cursor-zoom-in"
             aria-label={`Open gallery image ${idx + 1}`}
           >
-            <img
+            <Image
               src={photo}
               alt={`Gallery item ${idx + 1}`}
-              className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+              fill
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover transition duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-[#0b1c3d]/0 group-hover:bg-[#0b1c3d]/20 transition duration-300" />
           </button>
@@ -85,12 +91,15 @@ export default function GalleryGrid({ photos }: { photos: string[] }) {
             </button>
           )}
 
-          <img
-            src={photos[selected]}
-            alt={`Gallery item ${selected + 1}`}
-            onClick={(e) => e.stopPropagation()}
-            className="max-h-[85vh] max-w-full md:max-w-[85vw] rounded-lg object-contain shadow-2xl"
-          />
+          <div className="relative h-[85vh] w-full md:w-[85vw]" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={photos[selected]}
+              alt={`Gallery item ${selected + 1}`}
+              fill
+              sizes="85vw"
+              className="rounded-lg object-contain"
+            />
+          </div>
 
           {/* Next */}
           {photos.length > 1 && (

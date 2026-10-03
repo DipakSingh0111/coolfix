@@ -1,10 +1,12 @@
-import React from 'react';
-import data from '../data/content.json';
+import type { ReactNode } from 'react';
+import Image from 'next/image';
+import { site, type FooterData, type SectionProps } from '@/data';
+import { cn } from '@/lib/cn';
 
-export default function Footer() {
-  const footer = data.footer;
+export default function Footer({ data, className }: SectionProps<FooterData> = {}) {
+  const footer = data || site.footer;
 
-  const socialStyles: Record<string, { bg: string; svg: React.ReactNode }> = {
+  const socialStyles: Record<string, { bg: string; svg: ReactNode }> = {
     facebook: {
       bg: 'bg-[#3b5998]',
       svg: <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" /></svg>,
@@ -24,11 +26,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#041a33] text-gray-300 font-sans border-t-[8px] border-[#0b1c3d]">
+    <footer className={cn('bg-[#041a33] text-gray-300 font-sans border-t-[8px] border-[#0b1c3d]', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12 lg:gap-12">
         {/* Column 1: Logo, Description & Socials */}
         <div className="flex flex-col gap-6 pr-4 col-span-2 md:col-span-1">
-          <img className="h-14 sm:h-16 w-auto object-contain self-start" src={footer.logo} alt={footer.logoAlt} />
+          <Image className="h-14 sm:h-16 w-auto object-contain self-start" src={footer.logo.src} alt={footer.logo.alt} width={footer.logo.width} height={footer.logo.height} />
           <p className="text-[15px] leading-relaxed text-gray-400">
             {footer.description}
           </p>
@@ -42,6 +44,8 @@ export default function Footer() {
                 <a
                   key={social.icon}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className={`w-10 h-10 rounded-full ${style.bg} flex items-center justify-center hover:opacity-80 transition`}
                 >
@@ -54,7 +58,7 @@ export default function Footer() {
 
         {/* Column 2: Quick Links */}
         <div className="flex flex-col">
-          <h3 className="text-white font-bold text-[22px] mb-2">{footer.quickLinksTitle}</h3>
+          <h3 className="text-white font-bold text-[22px] mb-2">{footer.titles.quickLinks}</h3>
           <div className="w-8 h-1 bg-[#ff6b00] mb-8"></div>
           <ul className="space-y-4">
             {footer.quickLinks.map((link, idx) => (
@@ -70,7 +74,7 @@ export default function Footer() {
 
         {/* Column 3: Our Services */}
         <div className="flex flex-col">
-          <h3 className="text-white font-bold text-[22px] mb-2">{footer.servicesTitle}</h3>
+          <h3 className="text-white font-bold text-[22px] mb-2">{footer.titles.services}</h3>
           <div className="w-8 h-1 bg-[#ff6b00] mb-8"></div>
           <ul className="space-y-4">
             {footer.services.map((link, idx) => (
@@ -86,7 +90,7 @@ export default function Footer() {
 
         {/* Column 4: Contact Us */}
         <div className="flex flex-col col-span-2 md:col-span-1">
-          <h3 className="text-white font-bold text-[22px] mb-2">{footer.contactTitle}</h3>
+          <h3 className="text-white font-bold text-[22px] mb-2">{footer.titles.contact}</h3>
           <div className="w-8 h-1 bg-[#ff6b00] mb-8"></div>
           <div className="flex flex-col gap-6">
             {footer.contacts.map((contact, idx) => (

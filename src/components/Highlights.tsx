@@ -1,7 +1,6 @@
-import Icon from './Icon';
-import data from '../data/content.json';
-
-const { tag, titleStart, highlight, description, items } = data.highlights;
+import Icon from '@/components/Icon';
+import { site, type HighlightsData, type SectionProps } from '@/data';
+import { cn } from '@/lib/cn';
 
 const colors = {
   orange: {
@@ -18,9 +17,11 @@ const colors = {
   },
 };
 
-export default function Highlights() {
+export default function Highlights({ data, className }: SectionProps<HighlightsData> = {}) {
+  const { badge, heading, description, list: items } = data || site.highlights;
+
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fd] py-16 lg:py-24">
+    <section className={cn('relative overflow-hidden bg-[#f7f9fd] py-16 lg:py-24', className)}>
       <div
         className="pointer-events-none absolute left-8 top-16 hidden h-24 w-32 opacity-70 md:block"
         style={{ backgroundImage: 'radial-gradient(#b9c8e2 1.5px, transparent 1.5px)', backgroundSize: '18px 18px' }}
@@ -33,11 +34,11 @@ export default function Highlights() {
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <div className="mb-3 flex items-center justify-center gap-4">
             <span className="h-0.5 w-10 bg-[#ff6b00]" />
-            <span className="text-sm font-bold uppercase tracking-[0.15em] text-[#0b1c3d]">{tag}</span>
+            <span className="text-sm font-bold uppercase tracking-[0.15em] text-[#0b1c3d]">{badge}</span>
             <span className="h-0.5 w-10 bg-[#ff6b00]" />
           </div>
           <h2 className="mb-4 text-3xl font-extrabold text-[#0b1c3d] sm:text-4xl lg:text-[44px]">
-            {titleStart} <span className="text-[#ff6b00]">{highlight}</span>
+            {heading.main} <span className="text-[#ff6b00]">{heading.highlight}</span>
           </h2>
           <p className="text-gray-600">{description}</p>
         </div>

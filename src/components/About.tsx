@@ -1,28 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Icon from './Icon';
-import data from '../data/content.json';
+import Icon from '@/components/Icon';
+import { site, type AboutUsData, type SectionProps } from '@/data';
+import { cn } from '@/lib/cn';
 
-type AboutProps = {
+type AboutProps = SectionProps<AboutUsData> & {
   showButton?: boolean;
 };
 
-export default function About({ showButton = true }: AboutProps) {
-  const about = data.about;
+export default function About({ data, className, showButton = true }: AboutProps = {}) {
+  const about = data || site.about;
 
   return (
-    <section id="about" className="overflow-hidden bg-white pt-8 pb-8 lg:pt-12 lg:pb-12">
+    <section id="about" className={cn('overflow-hidden bg-white pt-8 pb-8 lg:pt-12 lg:pb-12', className)}>
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <div className="mb-4 flex items-center gap-3">
-            <span className="text-sm font-bold uppercase tracking-wider text-[#ff6b00]">{about.tag}</span>
+            <span className="text-sm font-bold uppercase tracking-wider text-[#ff6b00]">{about.badge}</span>
             <span className="h-0.5 w-12 bg-[#ff6b00]" />
           </div>
 
           <h2 className="mb-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-[#0b2a5b] sm:text-5xl lg:text-[54px]">
-            {about.titleStart}
+            {about.heading.main}
             <br />
-            {about.titleMiddle} <span className="text-[#ff6b00]">{about.highlight}</span>
+            {about.heading.middle} <span className="text-[#ff6b00]">{about.heading.highlight}</span>
           </h2>
 
           <p className="mb-8 leading-relaxed text-gray-600">{about.description}</p>
@@ -47,10 +48,10 @@ export default function About({ showButton = true }: AboutProps) {
 
           {showButton && (
             <Link
-              href={about.button.href}
+              href={about.cta.href}
               className="group inline-flex items-center gap-3 rounded-full bg-[#ff6b00] px-9 py-3.5 font-bold text-white shadow-lg shadow-orange-500/30 transition hover:bg-[#e55f00]"
             >
-              {about.button.label}
+              {about.cta.label}
               <Icon name="arrowRight" className="h-5 w-5 transition group-hover:translate-x-1" />
             </Link>
           )}
@@ -67,7 +68,7 @@ export default function About({ showButton = true }: AboutProps) {
 
           <div className="absolute left-[4%] top-[6.5%] h-[68%] w-[88%] overflow-hidden rounded-2xl border-[6px] border-white shadow-[0_12px_35px_rgba(11,28,61,0.18)]">
             <Image
-              src={about.mainImage}
+              src={about.image.main}
               alt="AC technician repairing an air conditioner"
               fill
               sizes="(min-width: 1024px) 500px, 90vw"
@@ -77,7 +78,7 @@ export default function About({ showButton = true }: AboutProps) {
 
           <div className="absolute bottom-0 right-[3%] h-[47%] w-[62%] overflow-hidden rounded-2xl border-[6px] border-white shadow-[0_16px_40px_rgba(11,28,61,0.25)]">
             <Image
-              src={about.secondaryImage}
+              src={about.image.secondary}
               alt="Smiling AC technician"
               fill
               sizes="(min-width: 1024px) 350px, 60vw"

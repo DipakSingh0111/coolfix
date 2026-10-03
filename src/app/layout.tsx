@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import data from "../data/content.json";
+import { site } from "@/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: data.site.title,
-  description: data.site.description,
+  title: site.global.site.title,
+  description: site.global.site.description,
 };
+
+import SiteHeader from '@/components/SiteHeader';
+import Footer from '@/components/Footer';
+import SmoothScroll from '@/components/SmoothScroll';
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -24,7 +28,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SmoothScroll>
+          <SiteHeader />
+          {children}
+          <Footer />
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

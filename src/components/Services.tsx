@@ -3,10 +3,9 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Icon from './Icon';
-import data from '../data/content.json';
-
-const { tag, titleStart, highlight, description, readMoreLabel, items } = data.services;
+import Icon from '@/components/Icon';
+import { site, type SectionProps, type ServicesData } from '@/data';
+import { cn } from '@/lib/cn';
 
 function subscribe(callback: () => void) {
   window.addEventListener('resize', callback);
@@ -21,7 +20,8 @@ function getPerView() {
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-export default function Services() {
+export default function Services({ data, className }: SectionProps<ServicesData> = {}) {
+  const { badge, heading, description, readMoreLabel, list: items } = data || site.services;
   const perView = useSyncExternalStore(subscribe, getPerView, () => 3);
   const maxIndex = Math.max(items.length - perView, 0);
   const [rawIndex, setIndex] = useState(0);
@@ -37,7 +37,7 @@ export default function Services() {
   }, [paused, maxIndex, index]);
 
   return (
-    <section id="services" className="relative overflow-hidden bg-[#f5f8fc] pt-8 pb-16 lg:pt-12 lg:pb-20">
+    <section id="services" className={cn('relative overflow-hidden bg-[#f5f8fc] pt-8 pb-16 lg:pt-12 lg:pb-20', className)}>
       <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full border-[40px] border-[#e6eef8]" />
       <div className="pointer-events-none absolute -bottom-32 -right-20 h-80 w-80 rounded-full border-[40px] border-[#e6eef8]" />
 
@@ -45,11 +45,11 @@ export default function Services() {
         <div className="mx-auto mb-10 max-w-4xl text-center">
           <div className="mb-3 flex items-center justify-center gap-3">
             <span className="h-0.5 w-8 bg-[#ff6b00]" />
-            <span className="text-sm font-bold uppercase tracking-wider text-[#ff6b00]">{tag}</span>
+            <span className="text-sm font-bold uppercase tracking-wider text-[#ff6b00]">{badge}</span>
             <span className="h-0.5 w-8 bg-[#ff6b00]" />
           </div>
           <h2 className="mb-4 text-3xl font-extrabold text-[#0b1c3d] sm:text-4xl lg:text-[42px] whitespace-nowrap">
-            {titleStart} <span className="text-[#ff6b00]">{highlight}</span>
+            {heading.main} <span className="text-[#ff6b00]">{heading.highlight}</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">{description}</p>
         </div>

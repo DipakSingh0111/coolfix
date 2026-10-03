@@ -1,32 +1,23 @@
 import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import data from '../../data/content.json';
+import { site, type BannerPage, type PageBannersData, type SectionProps } from '@/data';
+import { cn } from '@/lib/cn';
 
-const banners = data.pageBanners;
-
-export type BannerPage =
-  | 'about'
-  | 'services'
-  | 'serviceDetails'
-  | 'gallery'
-  | 'contact'
-  | 'book'
-  | 'getAQuote';
-
-type PageBannerProps = {
+type PageBannerProps = SectionProps<PageBannersData> & {
   page: BannerPage;
 };
 
-export default function PageBanner({ page }: PageBannerProps) {
-  const { title } = banners[page];
+export default function PageBanner({ page, data, className }: PageBannerProps) {
+  const banners = data || site.pageBanners;
+  const { title } = banners.pages[page];
   const breadcrumbs: { label: string; href?: string }[] = [
     { label: banners.homeLabel, href: banners.homeHref },
     { label: title },
   ];
 
   return (
-    <section className="relative z-[1] block overflow-hidden py-20 sm:py-24 lg:pb-[90px] lg:pt-[110px]">
+    <section className={cn('relative z-[1] block overflow-hidden py-20 sm:py-24 lg:pb-[90px] lg:pt-[110px]', className)}>
       <div className="absolute inset-0 -z-[1]">
         <Image src={banners.backgroundImage} alt="" fill preload sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-[#1c1c1c] opacity-75" />

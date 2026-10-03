@@ -1,12 +1,15 @@
 import Image from 'next/image';
-import data from '../data/content.json';
+import { site, type SectionProps, type StatsData } from '@/data';
+import { cn } from '@/lib/cn';
 
-export default function Stats() {
+export default function Stats({ data, className }: SectionProps<StatsData> = {}) {
+  const { list } = data || site.stats;
+
   return (
-    <section className="border-t border-gray-100 bg-white pt-14 pb-6 md:pt-16 md:pb-8">
+    <section className={cn('border-t border-gray-100 bg-white pt-14 pb-6 md:pt-16 md:pb-8', className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-y-12 lg:grid-cols-4">
-          {data.stats.map((stat) => {
+          {list.map((stat) => {
             const num = stat.value.replace(/\D/g, '');
             const symbol = stat.value.replace(/\d/g, '');
 

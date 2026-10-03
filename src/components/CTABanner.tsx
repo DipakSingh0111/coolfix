@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Icon from './Icon';
-import data from '../data/content.json';
+import Icon from '@/components/Icon';
+import { site, type CtaBannerData, type SectionProps } from '@/data';
+import { cn } from '@/lib/cn';
 
-export default function CTABanner() {
-  const cta = data.ctaBanner;
+export default function CTABanner({ data, className }: SectionProps<CtaBannerData> = {}) {
+  const cta = data || site.ctaBanner;
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#0b1c3d]">
+    <section className={cn('relative w-full overflow-hidden bg-[#0b1c3d]', className)}>
       <Image src={cta.image} alt="" fill sizes="100vw" className="object-cover object-[70%_center]" />
       <div className="absolute inset-0 bg-linear-to-r from-[#0b1c3d] from-25% via-[#0b1c3d]/85 via-50% to-[#0b1c3d]/30 max-lg:to-[#0b1c3d]/80" />
 
@@ -15,13 +16,13 @@ export default function CTABanner() {
         <div className="max-w-3xl text-white">
           <div className="mb-3 flex items-center gap-3">
             <span className="h-0.5 w-10 bg-[#ff6b00]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-200">{cta.tagline}</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-200">{cta.badge}</span>
           </div>
 
           <h2 className="mb-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[42px] whitespace-nowrap">
-            {cta.titleStart}
+            {cta.heading.main}
             <br />
-            <span className="text-[#ff6b00]">{cta.titleHighlight}</span>
+            <span className="text-[#ff6b00]">{cta.heading.highlight}</span>
           </h2>
 
           <p className="max-w-md text-gray-200 sm:text-lg">{cta.description}</p>

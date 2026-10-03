@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Icon from './Icon';
-import data from '../data/content.json';
+import Icon from '@/components/Icon';
+import { site, type HeaderData, type SectionProps } from '@/data';
+import { cn } from '@/lib/cn';
 
 type NavLink = {
   label: string;
@@ -12,15 +13,16 @@ type NavLink = {
   children?: { label: string; href: string }[];
 };
 
-export default function Navbar() {
-  const links: NavLink[] = data.navbar.links;
-  const { cta } = data.navbar;
+export default function Navbar({ data, className }: SectionProps<HeaderData> = {}) {
+  const header = data || site.header;
+  const links: NavLink[] = header.menu;
+  const { cta } = header;
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white shadow-[0_4px_20px_rgba(11,28,61,0.08)]">
+    <nav className={cn('sticky top-0 z-50 w-full bg-white shadow-[0_4px_20px_rgba(11,28,61,0.08)]', className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <ul className="hidden items-center gap-1 lg:flex -ml-5">

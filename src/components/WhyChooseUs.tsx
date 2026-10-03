@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import data from '../data/content.json';
+import { site, type SectionProps, type WhyChooseUsData } from '@/data';
+import { cn } from '@/lib/cn';
 
 const NAVY = '#0b2a5b';
 const ORANGE = '#ff6b00';
@@ -55,23 +56,23 @@ function FeatureIcon({ name }: { name: string }) {
   }
 }
 
-export default function WhyChooseUs() {
-  const { tag, titleStart, titleMiddle, highlight, items, image } = data.whyChooseUs;
+export default function WhyChooseUs({ data, className }: SectionProps<WhyChooseUsData> = {}) {
+  const { badge, heading, list: items, image } = data || site.whyChooseUs;
 
   return (
-    <section className="overflow-hidden bg-white py-16 lg:py-24">
+    <section className={cn('overflow-hidden bg-white py-16 lg:py-24', className)}>
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:px-8">
         <div>
           <div className="mb-4 flex items-center gap-3">
             <span className="h-0.5 w-12 bg-[#ff6b00]" />
-            <span className="text-sm font-bold uppercase tracking-wider text-[#0b2a5b]">{tag}</span>
+            <span className="text-sm font-bold uppercase tracking-wider text-[#0b2a5b]">{badge}</span>
             <span className="h-0.5 w-12 bg-[#ff6b00]" />
           </div>
 
           <h2 className="mb-10 text-3xl font-extrabold leading-[1.15] tracking-tight text-[#0b2a5b] sm:text-4xl lg:text-[clamp(1.85rem,2.8vw,2.3rem)]">
-            {titleStart}
+            {heading.main}
             <br />
-            {titleMiddle} <span className="text-[#ff6b00]">{highlight}</span>
+            {heading.middle} <span className="text-[#ff6b00]">{heading.highlight}</span>
           </h2>
 
           <div className="space-y-7">

@@ -2,26 +2,27 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Icon from './Icon';
-import data from '../data/content.json';
+import Icon from '@/components/Icon';
+import { site, type SectionProps, type TestimonialsData } from '@/data';
+import { cn } from '@/lib/cn';
 
-const { tag, titleStart, highlight, image, videoUrl, source, items } = data.testimonials;
-
-export default function Testimonials() {
+export default function Testimonials({ data, className }: SectionProps<TestimonialsData> = {}) {
+  const { badge, heading, image, videoUrl, source, list: items } = data || site.testimonials;
+  const count = items.length;
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const review = items[current];
 
-  const goTo = (index: number) => setCurrent((index + items.length) % items.length);
+  const goTo = (index: number) => setCurrent((index + count) % count);
 
   useEffect(() => {
     if (paused) return;
-    const timer = setInterval(() => setCurrent((prev) => (prev + 1) % items.length), 6000);
+    const timer = setInterval(() => setCurrent((prev) => (prev + 1) % count), 6000);
     return () => clearInterval(timer);
-  }, [paused, current]);
+  }, [paused, current, count]);
 
   return (
-    <section id="testimonials" className="bg-white pt-6 pb-16 lg:pt-8 lg:pb-20">
+    <section id="testimonials" className={cn('bg-white pt-6 pb-16 lg:pt-8 lg:pb-20', className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid overflow-hidden rounded-3xl bg-[#e9effc] lg:grid-cols-[1fr_1.15fr]">
           <div className="relative min-h-[340px] overflow-hidden rounded-3xl sm:min-h-[420px]">
@@ -53,11 +54,11 @@ export default function Testimonials() {
           >
             <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-orange-100 bg-white px-4 py-1.5 shadow-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-[#ff6b00]" />
-              <span className="text-sm font-semibold text-[#0b1c3d]">{tag}</span>
+              <span className="text-sm font-semibold text-[#0b1c3d]">{badge}</span>
             </div>
 
             <h2 className="mb-6 max-w-xl text-2xl font-extrabold leading-[1.2] text-[#0b1c3d] sm:text-4xl lg:text-[44px] tracking-tight">
-              {titleStart} <span className="text-[#ff6b00]">{highlight}</span>
+              {heading.main} <span className="text-[#ff6b00]">{heading.highlight}</span>
             </h2>
 
             <div className="flex gap-6 rounded-2xl bg-[#0d2b66] p-6 sm:gap-8 sm:p-8" aria-roledescription="carousel">

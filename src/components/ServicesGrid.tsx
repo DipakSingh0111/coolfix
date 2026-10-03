@@ -1,27 +1,27 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Icon from './Icon';
-import data from '../data/content.json';
+import Icon from '@/components/Icon';
+import { site, type SectionProps, type ServicesData } from '@/data';
+import { cn } from '@/lib/cn';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-export default function ServicesGrid() {
-  const { tag, titleStart, highlight, description, readMoreLabel, items } = data.services;
+export default function ServicesGrid({ data, className }: SectionProps<ServicesData> = {}) {
+  const { badge, heading, description, readMoreLabel, list: items } = data || site.services;
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-24">
+    <section className={cn('relative overflow-hidden bg-white py-16 lg:py-24', className)}>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <div className="mb-3 flex items-center justify-center gap-3">
             <span className="h-0.5 w-10 bg-[#ff6b00]" />
-            <span className="text-sm font-bold uppercase tracking-widest text-[#ff6b00]">{tag}</span>
+            <span className="text-sm font-bold uppercase tracking-widest text-[#ff6b00]">{badge}</span>
             <span className="h-0.5 w-10 bg-[#ff6b00]" />
           </div>
           <h2 className="mb-4 text-3xl font-extrabold text-[#0b1c3d] sm:text-4xl lg:text-[44px]">
-            {titleStart} <span className="text-[#ff6b00]">{highlight}</span>
+            {heading.main} <span className="text-[#ff6b00]">{heading.highlight}</span>
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto">{description}</p>
         </div>
