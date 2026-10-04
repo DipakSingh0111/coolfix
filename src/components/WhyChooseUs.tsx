@@ -60,7 +60,7 @@ export default function WhyChooseUs({ data, className }: SectionProps<WhyChooseU
   const { badge, heading, list: items, image } = data || site.whyChooseUs;
 
   return (
-    <section className={cn('overflow-hidden bg-white py-16 lg:py-24', className)}>
+    <section className={cn('overflow-hidden bg-white pt-16 pb-8 sm:pb-16 lg:py-24', className)}>
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:px-8">
         <div>
           <div className="mb-4 flex items-center gap-3">

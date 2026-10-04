@@ -6,7 +6,7 @@ export default function Steps({ data, className }: SectionProps<WorkingProcessDa
   const { badge, heading, list: steps } = data || site.workingProcess;
 
   return (
-    <section className={cn('mx-auto max-w-7xl px-4 pt-16 pb-8 text-center sm:px-6 lg:px-8 lg:pt-20 lg:pb-12', className)}>
+    <section className={cn('mx-auto max-w-7xl px-4 pt-10 pb-8 text-center sm:px-6 sm:pt-16 lg:px-8 lg:pt-20 lg:pb-12', className)}>
       <div className="mb-4 flex items-center justify-center gap-4">
         <span className="h-0.5 w-10 bg-[#ff6b00]" />
         <span className="text-sm font-semibold uppercase tracking-widest text-gray-600">{badge}</span>

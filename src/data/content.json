@@ -103,11 +103,11 @@
                   "label": "Trusted Service"
                 },
                 {
-                  "icon": "users",
+                  "icon": "team",
                   "label": "Experienced Team"
                 },
                 {
-                  "icon": "tag",
+                  "icon": "star",
                   "label": "Affordable Pricing"
                 }
               ],
@@ -118,14 +118,14 @@
                   "href": "https://facebook.com"
                 },
                 {
+                  "icon": "twitter",
+                  "label": "Twitter",
+                  "href": "https://twitter.com"
+                },
+                {
                   "icon": "instagram",
                   "label": "Instagram",
                   "href": "https://instagram.com"
-                },
-                {
-                  "icon": "whatsapp",
-                  "label": "WhatsApp",
-                  "href": "https://whatsapp.com"
                 },
                 {
                   "icon": "youtube",
@@ -147,19 +147,22 @@
               },
               "contacts": [
                 {
-                  "icon": "phone",
+                  "icon": "phoneFill",
+                  "tone": "orange",
                   "label": "Call Us Anytime",
                   "value": "+91 0000000000",
                   "href": "tel:+91 0000000000"
                 },
                 {
                   "icon": "mail",
+                  "tone": "blue",
                   "label": "Email Support",
                   "value": "info@xyz.com",
                   "href": "mailto:info@coolfix.com"
                 },
                 {
-                  "icon": "location",
+                  "icon": "pin",
+                  "tone": "orange",
                   "label": "Our Location",
                   "value": "28/4 Palmal, London",
                   "href": "#"
@@ -168,7 +171,8 @@
               "menu": [
                 {
                   "label": "Home",
-                  "href": "/"
+                  "href": "/",
+                  "icon": "home"
                 },
                 {
                   "label": "About Us",
@@ -176,7 +180,17 @@
                 },
                 {
                   "label": "Our Services",
-                  "href": "/services"
+                  "href": "/services",
+                  "children": [
+                    {
+                      "label": "All Services",
+                      "href": "/services"
+                    },
+                    {
+                      "label": "Service Details",
+                      "href": "/service-details"
+                    }
+                  ]
                 },
                 {
                   "label": "Gallery",
@@ -212,7 +226,11 @@
                   "title": "Our Services"
                 },
                 "serviceDetails": {
-                  "title": "Our Services"
+                  "title": "Service Details",
+                  "parent": {
+                    "label": "Our Services",
+                    "href": "/services"
+                  }
                 },
                 "gallery": {
                   "title": "Our Gallery"
@@ -984,12 +1002,12 @@
                 {
                   "title": "Choose Date & Time",
                   "desc": "Pick a slot that works for you.",
-                  "icon": "calendar"
+                  "icon": "calendarDays"
                 },
                 {
                   "title": "Expert Technician",
                   "desc": "Our professional will reach on time.",
-                  "icon": "technician"
+                  "icon": "worker"
                 },
                 {
                   "title": "Quality Service",

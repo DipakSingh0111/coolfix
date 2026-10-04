@@ -34,7 +34,8 @@
 }
 
 body {
-  background: var(--background);
+  /* Matches footer color so no black strip shows below the footer */
+  background: #041a33;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

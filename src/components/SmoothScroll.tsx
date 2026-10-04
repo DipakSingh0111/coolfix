@@ -25,8 +25,20 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
     }
   }, [scrollRef, resizePageHeight]);
 
+  // Track viewport height so we never translate past the footer
+  const [viewportHeight, setViewportHeight] = useState(0);
+  useEffect(() => {
+    const update = () => setViewportHeight(window.innerHeight);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const maxScroll = Math.max(pageHeight - viewportHeight, 1);
+
   const { scrollY } = useScroll();
-  const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight]);
+  // Clamped: content stops exactly when the footer bottom reaches the viewport bottom
+  const transform = useTransform(scrollY, [0, maxScroll], [0, -maxScroll]);
   const physics = { damping: 15, mass: 0.27, stiffness: 55 };
   const spring = useSpring(transform, physics);
 

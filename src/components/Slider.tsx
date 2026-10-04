@@ -25,7 +25,7 @@ export default function Slider({ data, className }: SectionProps<HeroBannerData>
 
   return (
     <section
-      className={cn('relative h-[560px] w-full overflow-hidden bg-[#f3f7fc] md:h-[calc(100svh-196px)] md:max-h-[720px] md:min-h-[320px]', className)}
+      className={cn('relative h-[560px] w-full overflow-hidden bg-[#f3f7fc] md:h-[calc(100svh-172px)] md:max-h-[720px] md:min-h-[320px]', className)}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"

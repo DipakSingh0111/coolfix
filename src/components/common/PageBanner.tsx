@@ -10,9 +10,12 @@ type PageBannerProps = SectionProps<PageBannersData> & {
 
 export default function PageBanner({ page, data, className }: PageBannerProps) {
   const banners = data || site.pageBanners;
-  const { title } = banners.pages[page];
+  const pageData = banners.pages[page];
+  const { title } = pageData;
+  const parent = 'parent' in pageData ? pageData.parent : undefined;
   const breadcrumbs: { label: string; href?: string }[] = [
     { label: banners.homeLabel, href: banners.homeHref },
+    ...(parent ? [{ label: parent.label, href: parent.href }] : []),
     { label: title },
   ];
 

@@ -47,7 +47,7 @@ export default function BookService({ data, className }: SectionProps<BookServic
                 {book.featuresLeft.map((feature) => (
                   <li key={feature.title} className="flex items-center gap-4">
                     <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#fff1e8] text-[#ff6b00]">
-                      <Icon name={feature.icon} className="h-6 w-6" />
+                      <Icon name={feature.icon} className="h-7 w-7" strokeWidth={1.6} />
                     </span>
                     <div>
                       <h4 className="mb-0.5 text-[16px] font-bold text-[#0b1c3d]">{feature.title}</h4>
@@ -75,7 +75,7 @@ export default function BookService({ data, className }: SectionProps<BookServic
                 className="pointer-events-none absolute -right-6 top-1/2 h-40 w-40 -translate-y-1/2 text-white/10"
               />
               <div className="relative flex items-center gap-5">
-                <Icon name="headset" strokeWidth={1.4} className="h-14 w-14 shrink-0 text-white" />
+                <Icon name="supportAgent" strokeWidth={1.3} className="h-16 w-16 shrink-0 text-white" />
                 <div>
                   <h4 className="text-xl font-bold text-white">{helpBadge.title}</h4>
                   <p className="mb-4 text-sm text-gray-300">{helpBadge.subtitle}</p>
@@ -105,7 +105,7 @@ export default function BookService({ data, className }: SectionProps<BookServic
             </div>
 
             <form className="grid gap-5 p-6 sm:grid-cols-2 sm:p-8">
-              <Field label={fields.name.label} required={fields.name.required} icon="userCheck">
+              <Field label={fields.name.label} required={fields.name.required} icon="user">
                 <input type="text" name="name" placeholder={fields.name.placeholder} required className={inputClass} />
               </Field>
               <Field label={fields.phone.label} required={fields.phone.required} icon="phone">
@@ -118,7 +118,7 @@ export default function BookService({ data, className }: SectionProps<BookServic
                 name="serviceType"
                 label={fields.serviceType.label}
                 required={fields.serviceType.required}
-                icon="settings"
+                icon="wrench"
                 placeholder={fields.serviceType.placeholder}
                 options={fields.serviceType.options}
               />
@@ -144,7 +144,7 @@ export default function BookService({ data, className }: SectionProps<BookServic
               <Field label={fields.address.label} required={fields.address.required} icon="location" className="sm:col-span-2">
                 <input type="text" name="address" placeholder={fields.address.placeholder} required className={inputClass} />
               </Field>
-              <Field label={fields.notes.label} icon="clipboardCheck" className="sm:col-span-2">
+              <Field label={fields.notes.label} icon="notePencil" className="sm:col-span-2">
                 <textarea name="notes" rows={3} placeholder={fields.notes.placeholder} className={`${inputClass} resize-none`} />
               </Field>
 
@@ -166,7 +166,7 @@ export default function BookService({ data, className }: SectionProps<BookServic
               className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-2 sm:gap-4 lg:justify-center lg:border-l lg:border-gray-200 lg:px-4 lg:first:border-l-0"
             >
               <span className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#ff6b00]/70 text-[#ff6b00]">
-                <Icon name={feature.icon} className="h-5 w-5 sm:h-6 sm:w-6" />
+                <Icon name={feature.icon} className="h-6 w-6 sm:h-8 sm:w-8" strokeWidth={1.7} />
               </span>
               <div>
                 <h4 className="mb-0.5 text-[14px] sm:text-[15px] font-bold text-[#0b1c3d]">{feature.title}</h4>

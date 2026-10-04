@@ -14,7 +14,7 @@ export default function SiteHeader({ data, className }: SectionProps<SiteHeaderD
   const header = data?.header || site.header;
 
   return (
-    <div className={cn('sticky top-0 z-50 flex w-full flex-col bg-white shadow-md', className)}>
+    <div className={cn('sticky top-0 z-50 flex w-full flex-col bg-white', className)}>
       <Topbar data={topbar} />
       <Header data={header} />
       <Navbar data={header} />
