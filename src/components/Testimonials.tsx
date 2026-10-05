@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Icon from '@/components/Icon';
+import VideoPlayButton from '@/components/VideoPlayButton';
 import { site, type SectionProps, type TestimonialsData } from '@/data';
 import { cn } from '@/lib/cn';
 
@@ -33,18 +34,16 @@ export default function Testimonials({ data, className }: SectionProps<Testimoni
               sizes="(min-width: 1024px) 560px, 100vw"
               className="object-cover"
             />
-            <a
-              href={videoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Watch customer stories"
-              className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white/60 transition hover:scale-105"
+            <VideoPlayButton
+              src={videoUrl}
+              ariaLabel="Watch customer stories"
+              className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-4 border-white/60 transition hover:scale-105"
             >
               <span className="absolute inset-0 animate-ping rounded-full bg-white/30" />
               <span className="relative flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white shadow-xl">
                 <Icon name="play" className="ml-1 h-7 w-7 text-[#ff6b00]" />
               </span>
-            </a>
+            </VideoPlayButton>
           </div>
 
           <div

@@ -267,10 +267,6 @@
                   "primaryBtn": {
                     "label": "Book a Service",
                     "href": "/book"
-                  },
-                  "secondaryBtn": {
-                    "label": "Get Details",
-                    "href": "#services"
                   }
                 },
                 {
@@ -350,7 +346,7 @@
                 "main": "/images/image_04.jpg",
                 "secondary": "/images/image_05.jpg"
               },
-              "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+              "videoUrl": "/air-conditioner.webm",
               "page": {
                 "title": "About Us",
                 "subtitle": "Know more about the team that keeps your home cool and comfortable.",
@@ -545,7 +541,7 @@
                 "highlight": "Services"
               },
               "image": "/images/image_03.jpg",
-              "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+              "videoUrl": "/air-conditioner.webm",
               "source": "Google",
               "list": [
                 {

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '@/components/Icon';
+import VideoPlayButton from '@/components/VideoPlayButton';
 import { site, type AboutUsData, type SectionProps } from '@/data';
 import { cn } from '@/lib/cn';
 
@@ -84,16 +85,14 @@ export default function About({ data, className, showButton = true }: AboutProps
               sizes="(min-width: 1024px) 350px, 60vw"
               className="object-cover"
             />
-            <a
-              href={about.videoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Watch our video"
-              className="absolute left-[45%] top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#ff6b00] text-white ring-4 ring-white/70 transition hover:scale-110 sm:h-14 sm:w-14"
+            <VideoPlayButton
+              src={about.videoUrl}
+              ariaLabel="Watch our video"
+              className="absolute left-[45%] top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-[#ff6b00] text-white ring-4 ring-white/70 transition hover:scale-110 sm:h-14 sm:w-14"
             >
               <span className="absolute inset-0 animate-ping rounded-full bg-[#ff6b00]/40" />
               <Icon name="play" className="relative ml-0.5 h-5 w-5 sm:h-6 sm:w-6" />
-            </a>
+            </VideoPlayButton>
           </div>
         </div>
       </div>

@@ -79,14 +79,16 @@ export default function Slider({ data, className }: SectionProps<HeroBannerData>
                     <Icon name="calendar" className="h-5 w-5" />
                     {slide.primaryBtn.label}
                   </Link>
-                  <Link
-                    href={slide.secondaryBtn.href}
-                    tabIndex={active ? 0 : -1}
-                    className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-md border-2 border-[#0b1c3d] bg-white px-6 sm:px-7 py-2.5 sm:py-3 font-bold md:py-[clamp(0.575rem,1.8vh,0.75rem)] text-[#0b1c3d] transition hover:bg-[#0b1c3d] hover:text-white"
-                  >
-                    {slide.secondaryBtn.label}
-                    <Icon name="arrowRight" className="h-5 w-5" />
-                  </Link>
+                  {slide.secondaryBtn && (
+                    <Link
+                      href={slide.secondaryBtn.href}
+                      tabIndex={active ? 0 : -1}
+                      className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-md border-2 border-[#0b1c3d] bg-white px-6 sm:px-7 py-2.5 sm:py-3 font-bold md:py-[clamp(0.575rem,1.8vh,0.75rem)] text-[#0b1c3d] transition hover:bg-[#0b1c3d] hover:text-white"
+                    >
+                      {slide.secondaryBtn.label}
+                      <Icon name="arrowRight" className="h-5 w-5" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
