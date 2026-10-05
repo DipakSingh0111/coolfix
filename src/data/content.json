@@ -60,7 +60,7 @@
                 "height": 726
               },
               "contact": {
-                "address": "123, Main Road, Sector 62, Noida, Uttar Pradesh, India",
+                "address": "1234 Elm Street, Suite 200, Austin, TX 78701, USA",
                 "phone": "+91 98765 43210",
                 "email": "info@coolfix.in"
               },
@@ -164,7 +164,7 @@
                   "icon": "pin",
                   "tone": "orange",
                   "label": "Our Location",
-                  "value": "28/4 Palmal, London",
+                  "value": "1234 Elm St, Austin, TX",
                   "href": "#"
                 }
               ],
@@ -911,7 +911,7 @@
                   "id": "address",
                   "icon": "location",
                   "title": "Our Location",
-                  "value": "123, Service Road, Sector 62, Noida, Uttar Pradesh 201301",
+                  "value": "1234 Elm Street, Suite 200, Austin, TX 78701, USA",
                   "subText": "",
                   "color": "orange"
                 }
@@ -977,10 +977,10 @@
                 "resetBtn": "Reset"
               },
               "map": {
-                "embedQuery": "Sector 62, Noida, Uttar Pradesh 201301",
-                "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Sector+62,+Noida,+Uttar+Pradesh+201301",
+                "embedQuery": "1234 Elm Street, Austin, TX 78701",
+                "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=1234+Elm+Street,+Austin,+TX+78701",
                 "locationTitle": "Our Location",
-                "address": "123, Service Road, Sector 62, Noida, Uttar Pradesh 201301",
+                "address": "1234 Elm Street, Suite 200, Austin, TX 78701, USA",
                 "cardTitle": "Find Us Here",
                 "cardText": "Visit our office for any inquiries or service support. We are conveniently located and easily accessible.",
                 "btnText": "Get Directions"
@@ -1223,7 +1223,7 @@
                 {
                   "icon": "location",
                   "label": "Our Location",
-                  "value": "123, Main Road, Sector 62, Noida, Uttar Pradesh, India"
+                  "value": "1234 Elm Street, Suite 200, Austin, TX 78701, USA"
                 }
               ],
               "copyright": "copyright @ 2026. All Rights Reserved. Powerd by Lestow."
