@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CountUp from '@/components/common/CountUp';
 import { site, type SectionProps, type StatsData } from '@/data';
 import { cn } from '@/lib/cn';
 
@@ -30,7 +31,7 @@ export default function Stats({ data, className }: SectionProps<StatsData> = {})
                 </div>
 
                 <div className="relative mt-6 text-[44px] font-extrabold leading-none tracking-tight sm:text-[52px]">
-                  <span className="text-[#0b2a5b]">{num}</span>
+                  <CountUp end={Number(num)} className="tabular-nums text-[#0b2a5b]" />
                   <span className="text-[#ff6b00]">{symbol}</span>
                 </div>
 
