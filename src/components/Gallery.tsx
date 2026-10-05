@@ -20,16 +20,12 @@ export default function Gallery({ data, className }: SectionProps<GalleryData> =
           <p className="mx-auto max-w-2xl text-[15px] text-gray-500">{gallery.description}</p>
         </div>
 
-        <GalleryGrid data={gallery.photos} />
-
-        <div className="flex justify-center">
-          <button
-            type="button"
-            className="rounded-full bg-[#ff6b00] px-8 py-3.5 text-[15px] font-bold text-white shadow-md shadow-orange-500/20 transition hover:bg-[#e65c00]"
-          >
-            {gallery.loadMoreBtn}
-          </button>
-        </div>
+        <GalleryGrid
+          data={gallery.photos}
+          initialCount={gallery.initialCount}
+          loadMoreCount={gallery.loadMoreCount}
+          loadMoreLabel={gallery.loadMoreBtn}
+        />
       </div>
     </section>
   );

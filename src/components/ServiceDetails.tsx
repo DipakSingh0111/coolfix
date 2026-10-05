@@ -1,16 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '@/components/Icon';
+import ScrollToTop from '@/components/common/ScrollToTop';
 import { site, type SectionProps, type ServiceDetailsData } from '@/data';
 import { cn } from '@/lib/cn';
 
-export default function ServiceDetails({ data, className }: SectionProps<ServiceDetailsData> = {}) {
-  const { sidebar, content } = data || site.serviceDetails;
-  const { hero, sections } = content;
+type ServiceDetailsProps = SectionProps<ServiceDetailsData> & { slug?: string };
+
+export default function ServiceDetails({ data, className, slug }: ServiceDetailsProps = {}) {
+  const { sidebar, items } = data || site.serviceDetails;
+  const current = items.find((item) => item.slug === slug) ?? items[0];
+  const { hero, sections } = current;
   const { assistance } = sidebar;
 
   return (
     <section className={cn('bg-white py-14 md:py-20', className)}>
+      <ScrollToTop />
       <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:px-8 xl:gap-10">
         <aside className="order-2 flex flex-col gap-6 lg:order-1">
           <div className="rounded-xl bg-[#0b2a5b] p-4 shadow-[0_10px_30px_rgba(11,28,61,0.18)] sm:p-5">
@@ -20,13 +25,13 @@ export default function ServiceDetails({ data, className }: SectionProps<Service
             </h3>
 
             <ul className="space-y-2">
-              {sidebar.services.map((service) => (
-                <li key={service.label}>
+              {items.map((service) => (
+                <li key={service.slug}>
                   <Link
-                    href={service.href}
-                    aria-current={service.active ? 'page' : undefined}
+                    href={`/service-details/${service.slug}`}
+                    aria-current={service.slug === current.slug ? 'page' : undefined}
                     className={`group flex items-center gap-3 rounded-md border px-3 py-3 text-[13px] font-medium transition ${
-                      service.active
+                      service.slug === current.slug
                         ? 'border-[#ff6b00] bg-[#ff6b00] text-white shadow-md shadow-orange-500/30'
                         : 'border-white/10 text-white hover:border-[#ff6b00]/60 hover:bg-white/5'
                     }`}
@@ -71,7 +76,7 @@ export default function ServiceDetails({ data, className }: SectionProps<Service
             <div className="absolute inset-y-0 right-0 w-full sm:w-[62%]">
               <Image
                 src={hero.image}
-                alt="Technician repairing a split AC"
+                alt={current.label}
                 fill
                 preload
                 sizes="(min-width: 1024px) 560px, 100vw"

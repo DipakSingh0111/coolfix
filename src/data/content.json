@@ -267,6 +267,10 @@
                   "primaryBtn": {
                     "label": "Book a Service",
                     "href": "/book"
+                  },
+                  "secondaryBtn": {
+                    "label": "Get a Quote",
+                    "href": "/get-a-quote"
                   }
                 },
                 {
@@ -286,8 +290,8 @@
                     "href": "/book"
                   },
                   "secondaryBtn": {
-                    "label": "Get Details",
-                    "href": "#services"
+                    "label": "Get a Quote",
+                    "href": "/get-a-quote"
                   }
                 },
                 {
@@ -307,8 +311,8 @@
                     "href": "/book"
                   },
                   "secondaryBtn": {
-                    "label": "Get Details",
-                    "href": "#services"
+                    "label": "Get a Quote",
+                    "href": "/get-a-quote"
                   }
                 }
               ]
@@ -371,104 +375,61 @@
                   "title": "AC Repair",
                   "icon": "technician",
                   "image": "/images/image_07.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-repair-maintenance"
                 },
                 {
                   "id": 2,
                   "title": "AC Installation",
                   "icon": "acUnit",
                   "image": "/images/image_08.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-installation"
                 },
                 {
                   "id": 3,
                   "title": "AC Cleaning",
                   "icon": "tools",
                   "image": "/images/image_09.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-cleaning-sanitization"
                 },
                 {
                   "id": 4,
                   "title": "AC Filter Replacement",
                   "icon": "snowflake",
                   "image": "/images/image_10.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-filter-replacement"
                 },
                 {
                   "id": 5,
                   "title": "Gas Refilling",
                   "icon": "snowflake",
                   "image": "/images/image_11.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-gas-refilling"
                 },
                 {
                   "id": 6,
                   "title": "AC Maintenance",
                   "icon": "gear",
                   "image": "/images/image_12.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-amc"
                 },
                 {
                   "id": 7,
                   "title": "Ducted AC Service",
                   "icon": "acUnit",
                   "image": "/images/image_01.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-ducted-system"
                 },
                 {
                   "id": 8,
                   "title": "Commercial AC Service",
                   "icon": "acUnit",
                   "image": "/images/image_02.jpg",
-                  "href": "/service-details"
+                  "href": "/service-details/ac-repair-maintenance"
                 }
               ],
               "serviceDetails": {
                 "sidebar": {
                   "title": "Our Services",
-                  "services": [
-                    {
-                      "label": "AC Repair & Maintenance",
-                      "icon": "acUnit",
-                      "href": "/service-details",
-                      "active": true
-                    },
-                    {
-                      "label": "AC Installation",
-                      "icon": "acInstall",
-                      "href": "/service-details"
-                    },
-                    {
-                      "label": "AC Cleaning & Sanitization",
-                      "icon": "spray",
-                      "href": "/service-details"
-                    },
-                    {
-                      "label": "AC Gas Refilling",
-                      "icon": "gasCylinder",
-                      "href": "/service-details"
-                    },
-                    {
-                      "label": "AC Ducted System",
-                      "icon": "duct",
-                      "href": "/service-details"
-                    },
-                    {
-                      "label": "AC AMC (Annual Maintenance)",
-                      "icon": "docGear",
-                      "href": "/service-details"
-                    },
-                    {
-                      "label": "AC Filter Replacement",
-                      "icon": "filter",
-                      "href": "/service-details"
-                    },
-                    {
-                      "label": "AC Electrical Work",
-                      "icon": "plug",
-                      "href": "/service-details"
-                    }
-                  ],
                   "assistance": {
                     "title": "Need Assistance?",
                     "description": "We're here to help you with all your AC service needs.",
@@ -477,57 +438,412 @@
                     "btnLink": "/contact"
                   }
                 },
-                "content": {
-                  "hero": {
-                    "badge": "PROFESSIONAL",
-                    "heading": {
-                      "main": "AC Repair &",
-                      "highlight": "Maintenance"
+                "items": [
+                  {
+                    "slug": "ac-repair-maintenance",
+                    "label": "AC Repair & Maintenance",
+                    "icon": "acUnit",
+                    "hero": {
+                      "badge": "PROFESSIONAL",
+                      "heading": {
+                        "main": "AC Repair &",
+                        "highlight": "Maintenance"
+                      },
+                      "subtitle": "Reliable AC Services for a Cooler and Healthier Tomorrow",
+                      "image": "/images/image_10.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "Expert Technicians"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Quality Service"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "Quick Response"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Affordable Pricing"
+                        }
+                      ]
                     },
-                    "subtitle": "Reliable AC Services for a Cooler and Healthier Tomorrow",
-                    "image": "/images/image_10.jpg",
-                    "features": [
+                    "sections": [
                       {
-                        "icon": "users",
-                        "label": "Expert Technicians"
+                        "title": "AC Repair & Maintenance Service",
+                        "text": "We provide professional AC repair and maintenance services for homes, offices and commercial spaces. Our experienced technicians ensure your AC runs efficiently with high performance, lower power consumption and longer life. From minor issues to major repairs, we handle everything with precision and care."
                       },
                       {
-                        "icon": "shieldCheck",
-                        "label": "Quality Service"
+                        "title": "Residential AC Repair",
+                        "text": "From cooling problems and water leakage to unusual noise and gas refilling, we provide complete AC repair solutions for homes. Our certified technicians ensure safe and reliable service to keep your indoor spaces cool and comfortable."
                       },
                       {
-                        "icon": "clock",
-                        "label": "Quick Response"
+                        "title": "Commercial AC Repair",
+                        "text": "We offer comprehensive AC repair and maintenance services for offices, shops, showrooms and industrial spaces. Our solutions are designed to meet higher cooling demands while ensuring minimal downtime and maximum efficiency."
                       },
                       {
-                        "icon": "rupee",
-                        "label": "Affordable Pricing"
+                        "title": "Quality & Safety Assurance",
+                        "text": "We use genuine parts, high-quality refrigerant gas and advanced tools to ensure safe and long-lasting performance. All services are carried out by skilled and trained professionals who follow industry standards and safety guidelines."
+                      },
+                      {
+                        "title": "Why Choose Our AC Repair & Maintenance?",
+                        "text": "With years of experience, skilled technicians and a customer-first approach, we have become a trusted name in AC repair and maintenance services. We provide transparent pricing, on-time service and dedicated support to ensure your complete satisfaction."
                       }
                     ]
                   },
-                  "sections": [
-                    {
-                      "title": "AC Repair & Maintenance Service",
-                      "text": "We provide professional AC repair and maintenance services for homes, offices and commercial spaces. Our experienced technicians ensure your AC runs efficiently with high performance, lower power consumption and longer life. From minor issues to major repairs, we handle everything with precision and care."
+                  {
+                    "slug": "ac-installation",
+                    "label": "AC Installation",
+                    "icon": "acInstall",
+                    "hero": {
+                      "badge": "EXPERT",
+                      "heading": {
+                        "main": "AC",
+                        "highlight": "Installation"
+                      },
+                      "subtitle": "Perfect Fitting for Maximum Cooling and Efficiency",
+                      "image": "/images/image_08.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "Certified Installers"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Safe Mounting"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "Same Day Setup"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Fair Pricing"
+                        }
+                      ]
                     },
-                    {
-                      "title": "Residential AC Repair",
-                      "text": "From cooling problems and water leakage to unusual noise and gas refilling, we provide complete AC repair solutions for homes. Our certified technicians ensure safe and reliable service to keep your indoor spaces cool and comfortable."
+                    "sections": [
+                      {
+                        "title": "AC Installation Service",
+                        "text": "We install split, window, cassette and ducted air conditioners for homes, offices and commercial spaces. Our technicians assess your room size, wall strength and power supply to recommend the ideal placement for the best cooling and lowest power consumption."
+                      },
+                      {
+                        "title": "Split & Window AC Installation",
+                        "text": "From wall-mounted indoor units to outdoor compressor brackets, copper piping, insulation and drain lines, we take care of every detail. Every installation is leak-tested and performance-checked before we hand it over."
+                      },
+                      {
+                        "title": "Uninstallation & Reinstallation",
+                        "text": "Shifting homes or offices? We safely uninstall, pack and reinstall your AC at the new location with proper gas pumping, so you do not lose refrigerant or cooling performance."
+                      },
+                      {
+                        "title": "Why Choose Our Installation Service?",
+                        "text": "Neat workmanship, genuine accessories, clear pricing and a post-installation service warranty make us the trusted choice for AC installation in your city."
+                      }
+                    ]
+                  },
+                  {
+                    "slug": "ac-cleaning-sanitization",
+                    "label": "AC Cleaning & Sanitization",
+                    "icon": "spray",
+                    "hero": {
+                      "badge": "DEEP",
+                      "heading": {
+                        "main": "AC Cleaning &",
+                        "highlight": "Sanitization"
+                      },
+                      "subtitle": "Fresh, Germ-Free Air for a Healthier Home",
+                      "image": "/images/image_09.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "Trained Experts"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Safe Chemicals"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "Quick Service"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Budget Friendly"
+                        }
+                      ]
                     },
-                    {
-                      "title": "Commercial AC Repair",
-                      "text": "We offer comprehensive AC repair and maintenance services for offices, shops, showrooms and industrial spaces. Our solutions are designed to meet higher cooling demands while ensuring minimal downtime and maximum efficiency."
+                    "sections": [
+                      {
+                        "title": "AC Cleaning & Sanitization Service",
+                        "text": "Dust, mould and bacteria build up inside your AC over time, reducing cooling and affecting air quality. Our deep cleaning service removes dirt from filters, coils, blower and drain tray using foam jet and pressure wash techniques."
+                      },
+                      {
+                        "title": "Jet Pump Deep Cleaning",
+                        "text": "We use high-pressure jet pumps to clean the evaporator and condenser coils thoroughly without damaging the fins, restoring airflow and improving cooling efficiency by up to 30%."
+                      },
+                      {
+                        "title": "Anti-Bacterial Sanitization",
+                        "text": "After cleaning, we apply safe, eco-friendly anti-bacterial sprays that kill germs and eliminate bad odour, so your family breathes clean and fresh air."
+                      },
+                      {
+                        "title": "Why Regular Cleaning Matters",
+                        "text": "Regular cleaning lowers electricity bills, prevents water leakage, reduces breakdowns and extends the life of your AC. We recommend a deep clean at least twice a year."
+                      }
+                    ]
+                  },
+                  {
+                    "slug": "ac-gas-refilling",
+                    "label": "AC Gas Refilling",
+                    "icon": "gasCylinder",
+                    "hero": {
+                      "badge": "GENUINE",
+                      "heading": {
+                        "main": "AC Gas",
+                        "highlight": "Refilling"
+                      },
+                      "subtitle": "Restore Powerful Cooling with Genuine Refrigerant",
+                      "image": "/images/image_11.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "Skilled Technicians"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Leak Tested"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "Fast Refill"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Transparent Rates"
+                        }
+                      ]
                     },
-                    {
-                      "title": "Quality & Safety Assurance",
-                      "text": "We use genuine parts, high-quality refrigerant gas and advanced tools to ensure safe and long-lasting performance. All services are carried out by skilled and trained professionals who follow industry standards and safety guidelines."
+                    "sections": [
+                      {
+                        "title": "AC Gas Refilling Service",
+                        "text": "If your AC is running but not cooling, low refrigerant could be the reason. We refill R32, R410A and R22 gases using calibrated gauges to ensure the exact pressure recommended by the manufacturer."
+                      },
+                      {
+                        "title": "Leak Detection & Repair",
+                        "text": "Before refilling, we detect and fix leaks in pipes, joints and coils using nitrogen pressure testing, so the new gas stays in and your AC keeps cooling for longer."
+                      },
+                      {
+                        "title": "Genuine Refrigerant Only",
+                        "text": "We use only branded, high-purity refrigerant gas that is safe for your compressor and the environment, avoiding the damage caused by adulterated gas."
+                      },
+                      {
+                        "title": "Why Choose Our Gas Refilling?",
+                        "text": "Accurate pressure checks, complete leak repair, clear pricing per unit and a service warranty make our gas refilling reliable and worry-free."
+                      }
+                    ]
+                  },
+                  {
+                    "slug": "ac-ducted-system",
+                    "label": "AC Ducted System",
+                    "icon": "duct",
+                    "hero": {
+                      "badge": "COMPLETE",
+                      "heading": {
+                        "main": "AC Ducted",
+                        "highlight": "System"
+                      },
+                      "subtitle": "Uniform Cooling for Large Homes and Commercial Spaces",
+                      "image": "/images/image_01.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "HVAC Experts"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Quality Ducting"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "On-Time Delivery"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Cost Effective"
+                        }
+                      ]
                     },
-                    {
-                      "title": "Why Choose Our AC Repair & Maintenance?",
-                      "text": "With years of experience, skilled technicians and a customer-first approach, we have become a trusted name in AC repair and maintenance services. We provide transparent pricing, on-time service and dedicated support to ensure your complete satisfaction."
-                    }
-                  ]
-                }
+                    "sections": [
+                      {
+                        "title": "Ducted AC System Service",
+                        "text": "Ducted air conditioning delivers even, quiet cooling to every room through hidden ducts. We design, install and service ducted systems for villas, offices, showrooms and restaurants."
+                      },
+                      {
+                        "title": "Design & Installation",
+                        "text": "Our HVAC engineers calculate heat load, plan duct routes and select the right capacity units, ensuring balanced airflow, minimal noise and maximum energy efficiency."
+                      },
+                      {
+                        "title": "Duct Cleaning & Maintenance",
+                        "text": "We clean ducts, grilles and diffusers, check insulation and balance dampers to keep the air clean and the system running at peak performance."
+                      },
+                      {
+                        "title": "Why Choose Our Ducted Solutions?",
+                        "text": "End-to-end project handling, quality materials, skilled HVAC teams and dedicated after-sales support make us the right partner for ducted AC systems."
+                      }
+                    ]
+                  },
+                  {
+                    "slug": "ac-amc",
+                    "label": "AC AMC (Annual Maintenance)",
+                    "icon": "docGear",
+                    "hero": {
+                      "badge": "HASSLE-FREE",
+                      "heading": {
+                        "main": "AC Annual",
+                        "highlight": "Maintenance"
+                      },
+                      "subtitle": "Year-Round Care with Priority Support and Savings",
+                      "image": "/images/image_12.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "Dedicated Team"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Covered Repairs"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "Priority Visits"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Big Savings"
+                        }
+                      ]
+                    },
+                    "sections": [
+                      {
+                        "title": "AC Annual Maintenance Contract",
+                        "text": "Our AMC plans keep your air conditioners in top condition all year with scheduled preventive services, priority breakdown support and discounted repairs for homes and businesses."
+                      },
+                      {
+                        "title": "What Our AMC Covers",
+                        "text": "Each plan includes periodic deep cleaning, gas pressure checks, electrical inspection, drain line cleaning and performance testing, with free visits for any breakdowns during the contract."
+                      },
+                      {
+                        "title": "Plans for Homes & Businesses",
+                        "text": "Choose from flexible plans for a single AC at home or multiple units across offices, shops and commercial buildings, with custom schedules to suit your operations."
+                      },
+                      {
+                        "title": "Why Choose Our AMC?",
+                        "text": "Fewer breakdowns, lower power bills, longer AC life and predictable yearly costs. Our AMC customers also get priority booking during peak summer months."
+                      }
+                    ]
+                  },
+                  {
+                    "slug": "ac-filter-replacement",
+                    "label": "AC Filter Replacement",
+                    "icon": "filter",
+                    "hero": {
+                      "badge": "CLEAN AIR",
+                      "heading": {
+                        "main": "AC Filter",
+                        "highlight": "Replacement"
+                      },
+                      "subtitle": "Breathe Cleaner Air with High-Quality Filters",
+                      "image": "/images/image_07.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "Expert Advice"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Genuine Filters"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "Quick Swap"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Low Cost"
+                        }
+                      ]
+                    },
+                    "sections": [
+                      {
+                        "title": "AC Filter Replacement Service",
+                        "text": "Clogged or damaged filters block airflow, reduce cooling and circulate dust and allergens. We replace old filters with genuine, correctly sized filters for all major AC brands."
+                      },
+                      {
+                        "title": "HEPA & Anti-Bacterial Filters",
+                        "text": "Upgrade to HEPA, carbon or anti-bacterial filters that trap fine dust, smoke, pollen and germs, ideal for families with kids, elderly members or allergy sufferers."
+                      },
+                      {
+                        "title": "When to Replace Your Filter",
+                        "text": "If you notice weak airflow, bad odour, more dust indoors or higher electricity bills, it is time to replace your filter. We recommend checking filters every 2-3 months."
+                      },
+                      {
+                        "title": "Why Choose Our Filter Service?",
+                        "text": "Genuine parts, the right fit for your model, quick doorstep service and honest advice on whether a clean or a replacement is really needed."
+                      }
+                    ]
+                  },
+                  {
+                    "slug": "ac-electrical-work",
+                    "label": "AC Electrical Work",
+                    "icon": "plug",
+                    "hero": {
+                      "badge": "SAFE",
+                      "heading": {
+                        "main": "AC Electrical",
+                        "highlight": "Work"
+                      },
+                      "subtitle": "Safe Wiring and Power Solutions for Your AC",
+                      "image": "/images/image_02.jpg",
+                      "features": [
+                        {
+                          "icon": "users",
+                          "label": "Licensed Electricians"
+                        },
+                        {
+                          "icon": "shieldCheck",
+                          "label": "Safety First"
+                        },
+                        {
+                          "icon": "clock",
+                          "label": "Quick Fix"
+                        },
+                        {
+                          "icon": "rupee",
+                          "label": "Honest Pricing"
+                        }
+                      ]
+                    },
+                    "sections": [
+                      {
+                        "title": "AC Electrical Work Service",
+                        "text": "Faulty wiring, tripping MCBs and voltage problems can damage your AC and create safety hazards. Our trained electricians handle all AC-related electrical work safely and professionally."
+                      },
+                      {
+                        "title": "Wiring, MCB & Stabilizer Setup",
+                        "text": "We install dedicated power points, correctly rated MCBs, earthing and voltage stabilizers to protect your AC compressor and electronics from power fluctuations."
+                      },
+                      {
+                        "title": "PCB & Component Repair",
+                        "text": "From PCB faults and capacitor failures to fan motor and thermostat issues, we diagnose and repair electrical components using genuine spare parts."
+                      },
+                      {
+                        "title": "Why Choose Our Electrical Service?",
+                        "text": "Certified electricians, strict safety standards, quality materials and clear pricing ensure your AC runs safely and reliably for years."
+                      }
+                    ]
+                  }
+                ]
               }
             }
           }
@@ -750,8 +1066,19 @@
                 "/images/image_06.jpg",
                 "/images/image_07.jpg",
                 "/images/image_08.jpg",
-                "/images/image_09.jpg"
+                "/images/image_09.jpg",
+                "/images/image_10.jpg",
+                "/images/image_11.jpg",
+                "/images/image_12.jpg",
+                "/images/image_01.jpg",
+                "/images/image_02.jpg",
+                "/images/image_03.jpg",
+                "/images/image_04.jpg",
+                "/images/image_05.jpg",
+                "/images/image_06.jpg"
               ],
+              "initialCount": 9,
+              "loadMoreCount": 3,
               "loadMoreBtn": "Load More Photos →"
             }
           }

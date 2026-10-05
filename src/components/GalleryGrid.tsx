@@ -6,15 +6,24 @@ import Image from 'next/image';
 import { site, type GalleryData, type SectionProps } from '@/data';
 import { cn } from '@/lib/cn';
 
-export default function GalleryGrid({ data, className }: SectionProps<GalleryData['photos']> = {}) {
-  const photos = data || site.gallery.photos;
+type GalleryGridProps = SectionProps<GalleryData['photos']> & {
+  initialCount?: number;
+  loadMoreCount?: number;
+  loadMoreLabel?: string;
+};
+
+export default function GalleryGrid({
+  data,
+  className,
+  initialCount = site.gallery.initialCount,
+  loadMoreCount = site.gallery.loadMoreCount,
+  loadMoreLabel = site.gallery.loadMoreBtn,
+}: GalleryGridProps = {}) {
+  const allPhotos = data || site.gallery.photos;
+  const [visibleCount, setVisibleCount] = useState(initialCount);
+  const photos = allPhotos.slice(0, visibleCount);
+  const hasMore = visibleCount < allPhotos.length;
   const [selected, setSelected] = useState<number | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const close = () => setSelected(null);
   const prev = () =>
     setSelected((s) => (s === null ? s : (s - 1 + photos.length) % photos.length));
@@ -62,7 +71,19 @@ export default function GalleryGrid({ data, className }: SectionProps<GalleryDat
         ))}
       </div>
 
-      {mounted && selected !== null && createPortal(
+      {hasMore && (
+        <div className="flex justify-center">
+          <button
+            type="button"
+            onClick={() => setVisibleCount((count) => Math.min(count + loadMoreCount, allPhotos.length))}
+            className="rounded-full bg-[#ff6b00] px-8 py-3.5 text-[15px] font-bold text-white shadow-md shadow-orange-500/20 transition hover:bg-[#e65c00]"
+          >
+            {loadMoreLabel}
+          </button>
+        </div>
+      )}
+
+      {selected !== null && createPortal(
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4"
           onClick={close}

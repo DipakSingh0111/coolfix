@@ -74,19 +74,21 @@ export default function Slider({ data, className }: SectionProps<HeroBannerData>
                   <Link
                     href={slide.primaryBtn.href}
                     tabIndex={active ? 0 : -1}
-                    className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-[#ff6b00] px-6 sm:px-7 py-3 sm:py-3.5 font-bold md:py-[clamp(0.7rem,1.8vh,0.875rem)] text-white shadow-lg shadow-orange-500/30 transition hover:bg-[#e55f00]"
+                    className="group flex w-full sm:w-auto items-center justify-center gap-3 rounded-2xl border-2 border-[#ff6b00] bg-[#ff6b00] px-6 sm:px-7 py-3 sm:py-3.5 text-base sm:text-lg font-semibold md:py-[clamp(0.7rem,1.8vh,0.875rem)] text-white shadow-lg shadow-orange-500/30 transition hover:bg-[#e55f00]"
                   >
-                    <Icon name="calendar" className="h-5 w-5" />
+                    <Icon name="calendarClock" className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.6} />
                     {slide.primaryBtn.label}
+                    <Icon name="arrowRight" className="ml-2 h-5 w-5 transition group-hover:translate-x-1" />
                   </Link>
                   {slide.secondaryBtn && (
                     <Link
                       href={slide.secondaryBtn.href}
                       tabIndex={active ? 0 : -1}
-                      className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-md border-2 border-[#0b1c3d] bg-white px-6 sm:px-7 py-2.5 sm:py-3 font-bold md:py-[clamp(0.575rem,1.8vh,0.75rem)] text-[#0b1c3d] transition hover:bg-[#0b1c3d] hover:text-white"
+                      className="group flex w-full sm:w-auto items-center justify-center gap-3 rounded-2xl border-2 border-[#0b2a5b] bg-white px-6 sm:px-9 py-3 sm:py-3.5 text-base sm:text-lg font-semibold md:py-[clamp(0.7rem,1.8vh,0.875rem)] text-[#0b2a5b] transition hover:bg-[#0b2a5b] hover:text-white"
                     >
+                      <Icon name="fileText" className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.6} />
                       {slide.secondaryBtn.label}
-                      <Icon name="arrowRight" className="h-5 w-5" />
+                      <Icon name="arrowRight" className="ml-2 h-5 w-5 transition group-hover:translate-x-1" />
                     </Link>
                   )}
                 </div>

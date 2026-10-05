@@ -19,6 +19,7 @@ export type HeroBannerData = typeof siteData.categories.CoolFix.sections.HeroBan
 export type AboutUsData = typeof siteData.categories.CoolFix.sections.AboutUs.variants.CoolFixAboutUs1;
 export type ServicesData = typeof siteData.categories.CoolFix.sections.Services.variants.CoolFixServices1;
 export type ServiceDetailsData = ServicesData['serviceDetails'];
+export type ServiceDetailItem = ServiceDetailsData['items'][number];
 export type TestimonialsData = typeof siteData.categories.CoolFix.sections.Testimonials.variants.CoolFixTestimonials1;
 export type HighlightsData = typeof siteData.categories.CoolFix.sections.Highlights.variants.CoolFixHighlights1;
 export type WorkingProcessData = typeof siteData.categories.CoolFix.sections.WorkingProcess.variants.CoolFixWorkingProcess1;

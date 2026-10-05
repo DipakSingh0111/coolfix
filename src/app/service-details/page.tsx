@@ -5,7 +5,7 @@ import ServiceDetails from '@/components/ServiceDetails';
 
 import { site } from '@/data';
 
-const { hero, sections } = site.serviceDetails.content;
+const [{ hero, sections }] = site.serviceDetails.items;
 
 export const metadata: Metadata = {
   title: `${hero.heading.main} ${hero.heading.highlight} | CoolFix`,
