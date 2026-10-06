@@ -10,7 +10,7 @@ export default function ServicesGrid({ data, className }: SectionProps<ServicesD
   const { badge, heading, description, readMoreLabel, list: items } = data || site.services;
 
   return (
-    <section className={cn('relative overflow-hidden bg-white py-16 lg:py-24', className)}>
+    <section className={cn('relative overflow-hidden bg-white pt-10 pb-16 lg:pt-12 lg:pb-24', className)}>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

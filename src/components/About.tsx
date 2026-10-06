@@ -13,7 +13,7 @@ export default function About({ data, className, showButton = true }: AboutProps
   const about = data || site.about;
 
   return (
-    <section id="about" className={cn('overflow-hidden bg-white pt-8 pb-8 lg:pt-12 lg:pb-12', className)}>
+    <section id="about" className={cn('overflow-hidden bg-white pt-8 pb-0 lg:pt-12 lg:pb-0', className)}>
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <div className="mb-4 flex items-center gap-3">

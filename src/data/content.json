@@ -61,8 +61,8 @@
               },
               "contact": {
                 "address": "1234 Elm Street, Suite 200, Austin, TX 78701, USA",
-                "phone": "+91 98765 43210",
-                "email": "info@coolfix.in"
+                "phone": "+91 0000000000",
+                "email": "info@xyz.com"
               },
               "socials": [
                 {
@@ -158,7 +158,7 @@
                   "tone": "blue",
                   "label": "Email Support",
                   "value": "info@xyz.com",
-                  "href": "mailto:info@coolfix.com"
+                  "href": "mailto:info@xyz.com"
                 },
                 {
                   "icon": "pin",
@@ -433,7 +433,7 @@
                   "assistance": {
                     "title": "Need Assistance?",
                     "description": "We're here to help you with all your AC service needs.",
-                    "phone": "+91 98765 43210",
+                    "phone": "+91 0000000000",
                     "btnText": "Contact Us",
                     "btnLink": "/contact"
                   }
@@ -1114,7 +1114,7 @@
               "helpBadge": {
                 "title": "Need Help?",
                 "subtitle": "Call Us Anytime",
-                "phone": "+91 98765 43210"
+                "phone": "+91 00000 00000"
               },
               "featuresBottom": [
                 {
@@ -1218,7 +1218,7 @@
                   "id": "phone",
                   "icon": "phone",
                   "title": "Call Us",
-                  "value": "+91 98765 43210",
+                  "value": "+91 00000 00000",
                   "subText": "Mon - Sat: 9:00 AM - 7:00 PM",
                   "color": "orange"
                 },
@@ -1226,7 +1226,7 @@
                   "id": "email",
                   "icon": "envelope",
                   "title": "Email Us",
-                  "value": "info@coolfix.com",
+                  "value": "info@xyz.com",
                   "subText": "We reply within 24 hours",
                   "color": "blue"
                 },
@@ -1342,7 +1342,7 @@
               "helpBadge": {
                 "title": "Need Immediate Help?",
                 "subtitle": "Call us now for quick assistance.",
-                "phone": "+91 98765 43210"
+                "phone": "+91 00000 00000"
               },
               "featuresBottom": [
                 {
