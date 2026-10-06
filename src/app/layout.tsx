@@ -29,9 +29,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SiteHeader className="fixed top-0 left-0 w-full z-[100]" />
+        <SiteHeader className="z-[100]" />
         <SmoothScroll>
-          <div className="pt-[112px] sm:pt-[120px] md:pt-[172px]">
+          <div>
             {children}
             <Footer />
           </div>

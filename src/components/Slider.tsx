@@ -25,7 +25,7 @@ export default function Slider({ data, className }: SectionProps<HeroBannerData>
 
   return (
     <section
-      className={cn('relative h-[560px] w-full overflow-hidden bg-[#f3f7fc] md:h-[calc(100svh-172px)] md:max-h-[720px] md:min-h-[320px]', className)}
+      className={cn('relative h-[560px] w-full overflow-hidden bg-[#f3f7fc] md:h-screen md:min-h-[700px]', className)}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
@@ -45,12 +45,12 @@ export default function Slider({ data, className }: SectionProps<HeroBannerData>
                 fill
                 preload={index === 0}
                 sizes="(min-width: 768px) 60vw, 100vw"
-                className={`object-cover transition-transform duration-[6000ms] ease-out ${active ? 'scale-105' : 'scale-100'}`}
+                className={`object-cover object-top transition-transform duration-[6000ms] ease-out ${active ? 'scale-105' : 'scale-100'}`}
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-[#f3f7fc] from-40% via-[#f3f7fc]/70 via-50% to-transparent to-60% max-md:from-[#f3f7fc]/95 max-md:via-[#f3f7fc]/80 max-md:to-[#f3f7fc]/50" />
 
-            <div className="relative mx-auto flex h-full max-w-7xl items-center px-4 pt-16 pb-16 sm:px-6 lg:px-8 md:pb-[clamp(1.25rem,4vh,2.5rem)] short:pb-3">
+            <div className="relative mx-auto flex h-full max-w-7xl items-center px-4 pt-28 pb-16 sm:px-6 lg:px-8 md:pt-40 md:pb-[clamp(1.25rem,4vh,2.5rem)] short:pb-3">
               <div
                 className={`max-w-xl transition-all delay-200 duration-700 lg:max-w-[min(36rem,48%)] w-full ${active ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
               >
