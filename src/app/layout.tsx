@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <SiteHeader className="z-[100]" />
         <SmoothScroll>
-          <div>
+          <div className="pt-[112px] sm:pt-[120px] md:pt-[172px]">
             {children}
             <Footer />
           </div>

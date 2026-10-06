@@ -5,9 +5,12 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const spacerRef = useRef<HTMLDivElement>(null);
   const [pageHeight, setPageHeight] = useState(0);
+  const [headerOffset, setHeaderOffset] = useState(0);
 
   const resizePageHeight = useCallback((entries: ResizeObserverEntry[]) => {
+    setHeaderOffset(spacerRef.current?.offsetTop ?? 0);
     for (const entry of entries) {
       setPageHeight(entry.contentRect.height);
     }
@@ -44,7 +47,7 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div style={{ height: pageHeight, width: "100%" }} />
+      <div ref={spacerRef} style={{ height: Math.max(pageHeight - headerOffset, 0), width: "100%" }} />
       <motion.div
         ref={scrollRef}
         style={{ y: spring }}

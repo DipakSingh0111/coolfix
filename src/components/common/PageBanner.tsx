@@ -20,7 +20,7 @@ export default function PageBanner({ page, data, className }: PageBannerProps) {
   ];
 
   return (
-    <section className={cn('relative z-[1] block overflow-hidden py-20 sm:py-24 lg:pb-[90px] lg:pt-[110px]', className)}>
+    <section className={cn('relative z-[1] block overflow-hidden py-20 sm:py-24 lg:pb-[90px] lg:pt-[160px]', className)}>
       <div className="absolute inset-0 -z-[1]">
         <Image src={banners.backgroundImage} alt="" fill preload sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-[#1c1c1c] opacity-75" />
@@ -32,9 +32,9 @@ export default function PageBanner({ page, data, className }: PageBannerProps) {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="mb-4 text-4xl font-bold capitalize leading-none text-white sm:text-5xl lg:text-[72px]">{title}</h1>
+        <h1 className="mb-4 text-4xl font-bold capitalize leading-none text-white sm:text-5xl lg:text-[72px]">{title || 'About Us'}</h1>
 
-        <nav aria-label="Breadcrumb">
+        <nav aria-label="Breadcrumb" className="mt-4">
           <ol className="flex flex-wrap items-center gap-x-2 text-base font-semibold capitalize leading-[30px] text-white md:text-xl">
             {breadcrumbs.map((crumb, idx) => (
               <Fragment key={`${crumb.label}-${idx}`}>

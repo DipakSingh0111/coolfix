@@ -1006,8 +1006,8 @@
               "description": "Get fast, reliable and affordable AC repair and service at your doorstep.",
               "image": "/images/image_08.jpg",
               "primaryBtn": {
-                "label": "Call Now 1234567890",
-                "href": "tel:1234567890",
+                "label": "Call Now 00000 00000",
+                "href": "tel:00000 00000",
                 "icon": "phone"
               },
               "secondaryBtn": {
